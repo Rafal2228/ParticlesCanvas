@@ -54,43 +54,10 @@ class Scene {
       if(this.composition[i].isDead()) {
         this.composition.splice(i, 1);
       } else {
-        this.updatePosition(this.composition[i])
         this.composition[i].draw();
+        this.composition[i].updatePosition();
       }
     }
-  }
-
-  updatePosition(element) {
-    if(!element.position instanceof Position) throw 'This is not valid position object!'
-
-    if(element.position.x < 0) {
-      element.position.x = 0;
-      element.position.vx = -element.position.vx / this.wallEnergyAbsorption;
-    }
-
-    if(element.position.x > this.width) {
-      element.position.x = this.width;
-      element.position.vx = -element.position.vx / this.wallEnergyAbsorption;
-    }
-
-    if(element.position.y > this.height) {
-      element.position.y = this.height;
-      element.position.vy = -element.position.vy / this.wallEnergyAbsorption;
-    }
-
-    var had = false;
-    for(var i = 0; i < this.construction.length; i++) {
-      if(this.construction[i].hasCollision(element.position)) {
-        had = true;
-        break;
-      }
-    }
-    if(!had) {
-      element.position.x += element.position.vx;
-      element.position.y += element.position.vy;
-    }
-
-    element.position.vy += this.gravity
   }
 
   getCenter() {
