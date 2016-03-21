@@ -18,11 +18,12 @@ class Scene {
     this.defaultCompositeOperation = this.context.globalCompositeOperation;
     this.composition = [];
     this.construction = [];
+    this.color = 'rgb(28, 28, 28)';
   }
 
   clearScene() {
     this.context.globalCompositeOperation = this.defaultCompositeOperation;
-    this.context.fillStyle = 'rgb(28, 28, 28)';
+    this.context.fillStyle = this.color;
     this.context.fillRect(0, 0, this.width, this.height);
     // this.context.globalCompositeOperation = 'lighter';
   }
