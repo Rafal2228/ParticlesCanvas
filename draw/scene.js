@@ -18,7 +18,7 @@ class Scene {
     this.defaultCompositeOperation = this.context.globalCompositeOperation;
     this.composition = [];
     this.construction = [];
-    this.color = 'rgb(28, 28, 28)';
+    this.color = 'rgb(255, 255, 255)';
   }
 
   clearScene() {

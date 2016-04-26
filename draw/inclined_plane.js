@@ -5,7 +5,7 @@ class InclinedPlane {
     this.position = position;
     this.length = length;
     this.angle = angle;
-    this.strokeColor = 'white';
+    this.strokeColor = 'black';
     this.lineWidth = 2;
   }
 

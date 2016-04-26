@@ -35,8 +35,10 @@ var main = new Scene(document.getElementById('canv'));
 
 // ------------------- Inclined Plane -------------------
 
-main.add(new InclinedPlane(main, new Position(100, 100), 600, .3 * Math.PI));
-main.add(new Ball(main, new Position(100, 0), 25));
+main.add(new Ball(main, new Position(100, 100), 25, 1, Math.PI * .3, 'ball'));
+main.add(new InclinedPlane(main, new Position(100,126), main.height + 330, Math.PI * .3));
+main.add(new Ball(main, new Position(100, 300), 25, 1, Math.PI * .3, 'cylinder'));
+main.add(new InclinedPlane(main, new Position(100,326), main.height, Math.PI * .3));
 setInterval(function() {
  main.draw();
 }, 1000/main.fps);
