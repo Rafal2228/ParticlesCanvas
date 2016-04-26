@@ -5,6 +5,7 @@ var BoundingBox = require('./draw/bounding_box');
 var Pendulum = require('./draw/pendulum');
 var InclinedPlane = require('./draw/inclined_plane');
 var Ball = require('./draw/ball');
+var GameOfLife = require('./draw/game_of_life');
 
 var main = new Scene(document.getElementById('canv'));
 
@@ -35,10 +36,18 @@ var main = new Scene(document.getElementById('canv'));
 
 // ------------------- Inclined Plane -------------------
 
-main.add(new Ball(main, new Position(100, 100), 25, 1, Math.PI * .3, 'ball'));
-main.add(new InclinedPlane(main, new Position(100,126), main.height + 330, Math.PI * .3));
-main.add(new Ball(main, new Position(100, 300), 25, 1, Math.PI * .3, 'cylinder'));
-main.add(new InclinedPlane(main, new Position(100,326), main.height, Math.PI * .3));
+// main.add(new Ball(main, new Position(100, 100), 25, 1, Math.PI * .3, 'ball'));
+// main.add(new InclinedPlane(main, new Position(100,126), main.height + 330, Math.PI * .3));
+// main.add(new Ball(main, new Position(100, 300), 25, 1, Math.PI * .3, 'cylinder'));
+// main.add(new InclinedPlane(main, new Position(100,326), main.height, Math.PI * .3));
+// setInterval(function() {
+//  main.draw();
+// }, 1000/main.fps);
+
+
+// ------------------- Game of Life -------------------
+
+main.add(new GameOfLife(main));
 setInterval(function() {
  main.draw();
 }, 1000/main.fps);
